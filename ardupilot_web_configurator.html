@@ -1257,7 +1257,7 @@
 .icon-btn:hover{ color: var(--text3); background: transparent; }
 
 /* =============================
- FLIGHT CONTROLLER MESSAGES (Mission Planner / QGC style)
+ FLIGHT CONTROLLER MESSAGES 
  ============================= */
 .msg-wrap{ padding:16px 24px 24px; overflow:hidden; display:flex; flex-direction:column; gap:12px; height: calc(100vh - 120px); }
 .msg-toolbar{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
@@ -1527,7 +1527,7 @@
 </div>
 
 <script>
-// ---- Mission Planner-style link/liveness (v0.1.24) ----
+
 function $(id){ return document.getElementById(id); }
 function safeStyle(el){ return (el && el.style) ? el.style : null; }
 window.__mpLink = { lastToastTs: 0, lastRecoverTs: 0, lastParamDoneTs: 0 };
@@ -5155,7 +5155,7 @@ const AGENTS = [
   { id: 'airframe', icon: '🧩', title: 'Airframe Mapping Wizard', subtitle: 'Plane/Copter output mapping' },
   { id: 'levelhorizon', icon: '🟦', title: 'Level Horizon Wizard', subtitle: 'Calibrate FC level attitude' },
   { id: 'accelcal', icon: '🧭', title: 'Accelerometer Calibration', subtitle: '6‑orientation accel calibration' },
-  { id: 'rccal', icon: '📡', title: 'Radio Calibration Wizard', subtitle: 'Mission Planner style RC calibration' }
+  { id: 'rccal', icon: '📡', title: 'Radio Calibration Wizard', subtitle: 'RC calibration' }
 ];
 
 const VTOL_TYPES = [
@@ -6260,7 +6260,7 @@ function agtCheckQParams(){
 
 
 // ============================================================
-// LEVEL HORIZON WIZARD (Mission Planner / QGroundControl style)
+// LEVEL HORIZON WIZARD 
 // ============================================================
 const LEVEL_HORIZON_STEPS = [
   { id:'prep', title:'Step 1 — Level the aircraft', desc:'Place the aircraft on a known level surface in its normal flight attitude. Use shims if needed so the fuselage is truly level.' },
@@ -6270,7 +6270,7 @@ const LEVEL_HORIZON_STEPS = [
 
 
 // ============================================================
-// RADIO CALIBRATION WIZARD (Mission Planner style)
+// RADIO CALIBRATION WIZARD 
 // ============================================================
 const RC_CAL_STEPS = [
   { id:'prep', title:'Step 1 — Verify transmitter / receiver', desc:'Power the transmitter, keep trims centered, and confirm live bars move when you touch each stick, switch, or knob. If the wizard stays in WAITING FOR LIVE RC, use the resend control and diagnostics below.' },
@@ -6452,7 +6452,7 @@ function renderRcCalWizard(area){
     <div class="content-header">
       <div>
         <h1>🤖 Configuration Agents · 📡 Radio Calibration Wizard</h1>
-        <p>Mission Planner style RC calibration with live channel bars, min / max capture, and RCx_MIN / RCx_MAX / RCx_TRIM staging</p>
+        <p>RC calibration with live channel bars, min / max capture, and RCx_MIN / RCx_MAX / RCx_TRIM staging</p>
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
         <button class="btn" onclick="closeAgent()">← Back</button>
@@ -6475,7 +6475,7 @@ function renderRcCalWizard(area){
           <div class="rcwiz-wrap">
             <div class="rcwiz-intro">
               <h3>Workflow</h3>
-              <p>Follow that the bars move correctly, capture full stick / switch travel, capture centered trims, then stage the resulting RC parameters for write or export.</p>
+              <p>Verify the bars move correctly, capture full stick / switch travel, capture centered trims, then stage the resulting RC parameters for write or export.</p>
               <div class="rcwiz-callout">Safety: keep props disconnected while calibrating. This wizard is intended for a connected flight controller because it depends on live RC channel data.</div>
             </div>
             <div class="rcwiz-grid">
@@ -6731,7 +6731,7 @@ function renderLevelHorizonWizard(area){
     <div class="content-header">
       <div>
         <h1>🤖 Configuration Agents · 🟦 Level Horizon Wizard</h1>
-        <p>Mission Planner / QGroundControl style board-level trim calibration with live roll/pitch validation</p>
+        <p>Board-level trim calibration with live roll/pitch validation</p>
       </div>
       <div style="display:flex;gap:8px;align-items:center;">
         <button class="btn" onclick="closeAgent()">← Back</button>
@@ -7695,7 +7695,7 @@ function renderOSDEditor(area) {
         </div>
 
         <div style="margin-top:10px;color:var(--text3);font-size:12px;line-height:1.6;">
-          Tip: Drag from the left list to place. Drag an existing token to move. Drop on 🗑 to disable. Click a parameter name in Advanced to jump to that item.
+          Tip: Drag from the left list to place. Drag an existing element to move. Double Click an element to disable. Drop on 🗑 to disable.
         </div>
       </div>
     </div>
